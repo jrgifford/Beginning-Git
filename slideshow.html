@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  
+  <!--[if lt IE 9]>
+  <script src="lib/html5shim.js"></script>
+  <![endif]-->  
+  
+  <!-- These are some core styles the slideshow app requires -->
+  <link rel="stylesheet" href="lib/styles.css" />
+  
+  <!-- These are the styles you'll add to make the slides look great -->
+  <link rel="stylesheet" href="css/styles.css" />
+  
+  <!-- I <3 the Ubuntu fontface. Yeah!! -->
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,500,700' rel='stylesheet' type='text/css'>
+
+  <title>Beginning Git</title>
+</head>
+<body>
+  <header>
+    <h1>Beginning Git</h1>
+    <nav>
+      <ul>
+        <li><button id="prev-btn" title="Previous slide">Previous Slide</button></li>
+        <li><span id="slide-number"></span>/<span id="slide-total"></span></li>
+        <li><button id="next-btn" title="Next Slide">Next Slide</button></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="deck">
+    
+    <!-- Begin slides -->
+    <section>
+      <hgroup>
+        <h1>Beginning Git</h1>
+        <h2>James Gifford</h2>
+        <h2>@jrgifford, http://jamesrgifford.com</h2>
+      </hgroup>
+    </section>
+    <section>
+      <hgroup>
+        <h1>Installing Git</h1>
+      </hgroup>
+      <ul>
+        <li>Got to git-scm.org</li>
+        <li>Download the appropriate version of Git</li>
+        <li>Install</li>
+        <li>Wait</li>
+      </ul>
+</blockquote>
+    </section>
+    <section>
+      <hgroup>
+        <h1>So, what is Git exactly?</h1>
+      </hgroup>
+      <p>Git is a free & open source, distributed version control system designed to handle everything from small to very large projects with speed and efficiency.</p>  
+    </section>
+  	<section>
+      <hgroup>
+        <h1>So, what's that in english?</h1>
+      </hgroup>
+      <p>So, now I'll explain that. While you're waiting, have a kitten:</p>
+      <img src="images/placekittne.jpg"/>
+    </section>
+  	<section>
+      <hgroup>
+        <h1>Local stuff</h1>
+      </hgroup>
+
+      <ul>
+        <li><code>git config</code></li>
+        <li><code>git init</code></li>
+        <li><code>git add</code></li>
+        <li><code>git status</code></li>
+        <li><code>git commit</code></li>
+        <li></code>git log</code></li>
+        <li></code>git show</code></li>
+      </ul>
+    </section>    
+    <section>
+      <hgroup>
+        <h1>Usage of all the local stuff</h1>
+        <h2>I'll now drop to a terminal and provide a demo of all the cool stuff in the "local" category</h2>
+      </hgroup>
+    </section>
+  	<section>
+      <hgroup>
+        <h1>OK, onto remote stuff</h1>
+      </hgroup>
+      <p>And now we deal with all the remote stuff:</p>
+      <ul>
+        <li>git clone</li>
+        <li>git remote</li>
+        <li>git pull</li>
+        <li>git fetch</li>
+        <li>git push</li>
+      </ul>
+    </section>
+
+    <section>
+      <hgroup>
+        <h1>Back to the terminal!</h1>
+      </hgroup>
+
+      <p>Ok, back to the terminal to show you how to use remotes, and to explain what they do</p>
+    </section>
+    
+    <section>
+      <hgroup>
+        <h1>Branches: What are they?</h1>
+      </hgroup>
+
+      <p>Ok, so you're probably all like "What are these branches?!" - you'd be right to ask.</p>
+
+    </section>
+
+    <section>
+      <hgroup>
+        <h1>Branches are....</h1>
+      </hgroup>
+
+      <p>Awesome, but we knew that</p>
+      <p>A way to screw around</p>
+      <p>And a way to save kittens</p>
+      <img src="images/placekittne-400-300.jpg"/>
+
+    </section>
+
+    <section>
+      <hgroup>
+        <h1>The Golden Rule of Branches</h1>
+      </hgroup>
+
+      <h2>Every time you remove a branch, a kitten dies</h2>
+
+      <p><b>Don't.</b><em> remove.</em><b><em> branches</em></b></p>
+
+      <p>(Unless Linus Torvalds says you can)</p>
+
+      <img src="images/placekitten-200-301.jpg"/>
+    </section>
+
+    <section>
+      <hgroup>
+        <h2>Why do I want to use a branch?</h2>
+      </hgroup>
+      
+      <ul>
+        <li>You can mess up without screwing up the rest of your project.</li>
+        <li>It's easier to implement things</li>
+        <li>You can experiment easily</li>
+        <li>It makes multi-developer projects a little less painful</li>
+      </ul>
+    </section>
+
+    <section>
+      <hgroup>
+        <h2>Branchey stuff. Yay!</h2>
+      </hgroup>
+      
+      <p>Now for some basic "branch theory":</p>
+      <ul>
+        <li>git checkout</li>
+        <li>git branch</li>
+        <li>git merge</li>
+      </ul>
+      </section>
+    <!-- /End slides -->
+    
+  </div>
+  <!-- /deck -->
+  <script src="../lib/jquery-1.5.2.min.js"></script>
+  <script src="../lib/jquery.jswipe-0.1.2.js"></script>  
+  <script src="../lib/htmlSlides.js"></script>
+  <script>
+    //Do our business when the DOM is ready for us
+    $(function() {
+      
+      //You can trigger Javascript based on the slide number like this:
+      $('html').bind('newSlide', function(e, id) { 
+        switch(id) {
+          case 2:
+            console.log('This is the second slide.');;
+            break;
+          case 3:
+            console.log('Hello, third slide.');
+            break;
+        }
+      });
+
+      //One little option: hideToolbar (boolean; default = false)
+      htmlSlides.init({ hideToolbar: true });
+      
+    });
+  </script>
+  </body>
+</html>
